@@ -1,0 +1,20 @@
+" editor font
+set guifont=Inconsolata:h14
+
+" try to smooth font
+set antialias
+
+" use utf-8 encoding
+set encoding=utf-8
+
+" hide the toolbar
+set guioptions-=T
+
+" set the background
+set background=dark
+
+" window dimensions
+set lines=50 columns=120
+
+" disable scrollbar
+set guioptions-=r

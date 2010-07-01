@@ -1,0 +1,231 @@
+# Doctypes
+
+snippet doctype HTML 4.01 Strict
+	<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN"
+		"http://www.w3.org/TR/html4/strict.dtd">
+
+snippet doctype HTML 4.01 Transitional
+	<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+	   	"http://www.w3.org/TR/html4/loose.dtd">
+
+snippet doctype HTML 4.01 Frameset
+	<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Frameset//EN"
+	   	"http://www.w3.org/TR/html4/frameset.dtd">
+
+snippet doctype XHTML 1.0 Strict
+	<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+	   	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+snippet doctype XHTML 1.0 Transitional
+	<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+	   	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+snippet doctype XHTML 1.0 Frameset
+	<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Frameset//EN"
+	   	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-frameset.dtd">
+
+snippet doctype XHTML Basic 1.1
+	<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML Basic 1.1//EN"
+		"http://www.w3.org/TR/xhtml-basic/xhtml-basic11.dtd">
+
+snippet doctype HTML5
+	<!DOCTYPE HTML>
+
+snippet html Basic HTML Tag
+	<html>
+		${1}
+	</html>
+
+# Tags
+snippet html Basic XHTML Tag
+	<html xmlns="http://www.w3.org/1999/xhtml">
+		${1}
+	</html>
+
+snippet head Basic XHTML Header 
+	<head>
+		<meta http-equiv="content-type" content="text/html; charset=utf-8"`Close()`>
+		<title>${1:`substitute(Filename('', 'Page Title'), '^.', '\u&', '')`}</title>
+		${2}
+	</head>
+
+snippet head Basic HTML5 Header
+	<head>
+		<meta charset="utf-8">
+		<title>${1:`substitute(Filename('', 'Page Title'), '^.', '\u&', '')`}</title>
+		${2}
+	</head>
+
+snippet title
+	<title>${1:`substitute(Filename('', 'Page Title'), '^.', '\u&', '')`}</title>${2}
+
+snippet meta
+	<meta name="${1:name}" content="${2:content}"`Close()`>${3}
+
+snippet script Inline Script
+	<script type="text/javascript" charset="utf-8">
+		${1}
+	</script>${2}
+
+snippet script Script Source
+	<script src="${1}.js" type="text/javascript" charset="utf-8"></script>${2}
+
+snippet style
+	<style type="text/css" media="${1:screen}">
+		${2}
+	</style>${3}
+
+snippet link
+	<link rel="${1:stylesheet}" href="${2:/css/master.css}" type="text/css" media="${3:screen}" charset="utf-8"`Close()`>${4}
+	
+snippet body
+	<body>
+		${1}
+	</body>
+	
+snippet base
+	<base href="${1}" target="${2}"`Close()`>
+
+snippet br
+	<br`Close()[1:]`>
+
+snippet div
+	<div ${1}>
+		${2}
+	</div>
+		
+snippet divi
+	<div id="${1:name}">
+		${2}
+	</div>
+
+snippet divc
+	<div class="${1:name}">
+		${2}
+	</div>
+
+snippet fieldset
+	<fieldset id="${1}">
+	<legend>${1:name}</legend>
+		${3}
+	</fieldset>
+
+snippet form
+	<form action="${1:`Filename('$1_submit')`}" method="${2:post}" accept-charset="utf-8">
+		${3}
+	</form>
+
+snippet input Button
+	<input type="button" name="${1}" value="${2}"`Close()`>
+
+snippet input Checkbox
+	<input type="checkbox" name="${1}" value="${2}"`Close()`>
+	
+snippet input Date
+	<input type="date" name="${1}" value="${2}"`Close()`>
+
+snippet input DateTime
+	<input type="datetime" name="${1}" value="${2}"`Close()`>
+
+snippet input Datetime Local
+	<input type="datetime-local" name="${1}" value="${2}"`Close()`>
+	
+snippet input E-Mail
+	<input type="email" name="${1}" value="${2}"`Close()`>
+
+snippet input File
+	<input type="File" name="${1}" value="${2}"`Close()`>
+	
+snippet input Image
+	<input type="image" name="${1}" value="${2}"`Close()`>
+	
+snippet input Month
+	<input type="month" name="${1}" value="${2}"`Close()`>
+
+snippet input Number
+	<input type="number" name="${1}" value="${2}"`Close()`>
+
+snippet input Password
+	<input type="password" name="${1}" value="${2}"`Close()`>
+
+snippet input Radio
+	<input type="radio" name="${1}" value="${2}"`Close()`>
+
+snippet input Range
+	<input type="range" name="${1}" value="${2}"`Close()`>
+
+snippet input Reset
+	<input type="reset" name="${1}" value="${2}"`Close()`>
+
+snippet input Search
+	<input type="search" name="${1}" value="${2}"`Close()`>
+
+snippet input Submit
+	<input type="submit" name="${1}" value="${2}"`Close()`>
+	
+snippet input Text
+	<input type="text" name="${1}" value="${2}"`Close()`>
+
+snippet input Time
+	<input type="time" name="${1}" value="${2}"`Close()`>
+
+snippet input Week
+	<input type="week" name="${1}" value="${2}"`Close()`>
+
+snippet textarea
+	<textarea name="${1:Name}" rows="${2:8}" cols="${3:40}">${4}</textarea>${5}
+
+snippet select
+	<select name="${1:some_name}" id="${2:$1}">
+		<option value="${3:option}">${4:$3}</option>
+	</select>${5}
+	
+snippet option
+	<option value="${1:option}">${2:$1}</option>${3}
+	
+snippet table
+	<table border="${1:0}">
+		<thead>
+			<tr><td>${2:Header}</td></tr>
+		</thead>
+		<tfoot>
+			<tr><td>${3:Footer}</td></tr>
+		</tfoot>
+		<tbody>
+			<tr><td>${4:Data}</td></tr>
+		</tbody>
+	</table>${5}
+
+snippet row
+	<tr><td>${1:Data}</td></tr>
+
+snippet cell
+	<td>${1:Data}</td>
+
+
+snippet template XHTML Template
+	<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+		"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+	<html xmlns="http://www.w3.org/1999/xhtml">
+		<head>
+			<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+			<title>${1:`substitute(Filename('', 'Page Title'), '^.', '\u&', '')`}</title>
+			${2}
+		</head>	
+		<body>
+			${3}
+		</body>
+	</html>
+
+snippet template HTML5 Template
+	<!DOCTYPE HTML>
+	<html>
+		<head>
+			<meta charset="utf-8">
+			<title>${1:`substitute(Filename('', 'Page Title'), '^.', '\u&', '')`}</title>
+			${2}
+		</head>	
+		<body>
+			${3}
+		</body>
+	</html>

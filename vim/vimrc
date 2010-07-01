@@ -1,0 +1,149 @@
+filetype off
+call pathogen#runtime_append_all_bundles()
+call pathogen#helptags()
+
+" disable vi compatible mode
+set nocompatible
+
+" encoding to utf-8
+set encoding=utf-8
+
+" enable 256 colors
+set t_Co=256
+
+" keep 100 last commands
+set history=100
+
+" enable mouse in all modes
+set mouse=a
+
+" always set autoindenting on
+set autoindent
+set smartindent
+
+" enable syntax highlighting
+syntax enable
+
+" enable file type detection.
+filetype plugin indent on
+
+" show partial commands
+set showcmd
+
+" show current mode        
+set showmode
+
+" intuitive backspacing
+set backspace=indent,eol,start
+
+" don't unload buffers
+set hidden
+
+" enable command line completion
+set wildmenu
+
+" show complete list of possible matches
+set wildmode=list:longest
+
+" ignore case while searching
+set ignorecase
+
+" make case sensitive if search term has capitals
+set smartcase
+
+" display line numbers
+set number
+
+" position in a buffer 
+set ruler
+
+" highlight search matches while typing
+set incsearch
+
+" highlight all search matches
+set hlsearch
+
+" wrap lines
+set wrap
+
+" number of line to keep above and below the cursos
+set scrolloff=3
+
+" change terminal title
+set title
+
+" disable beep
+set visualbell
+
+" don't create backup file ~
+set nobackup
+set nowritebackup
+
+" tidy up swap files
+set directory=$HOME/.vim/tmp/
+
+" global tab width
+set tabstop=2
+
+" number of spaces for indentation
+set shiftwidth=2
+
+" use spaces instead of tabs
+set expandtab
+
+" always show status line
+set laststatus=2
+
+" chars to be listed, tabs and whitspaces
+set listchars=tab:>-,trail:·,eol:$
+
+set tags=$HOME/.vim/tags
+
+runtime macros/matchit.vim
+
+" status line
+set statusline=[%n]\ %F%m%r%h%w%=\ [format=%{&ff}]\ [encoding=%{&fenc}]\ [type=%y]\ [ascii=\%03.3b]\ [hex=\%02.2b]\ [pos=%04l,%04v][%p%%]\ [len=%l]
+
+" or use vividchalk
+colorscheme sunburst
+
+" change default shortcut key \ to ,
+let mapleader=","
+
+" move lines http://vim.wikia.com/wiki/Moving_lines_up_or_down
+nnoremap <C-j> :m+<CR>==
+nnoremap <C-k> :m-2<CR>==
+inoremap <C-j> <Esc>:m+<CR>==gi
+inoremap <C-k> <Esc>:m-2<CR>==gi
+vnoremap <C-j> :m'>+<CR>gv=gv
+vnoremap <C-k> :m-2<CR>gv=gv
+
+" set php and html for php files
+autocmd BufRead *.php set ft=php.html
+autocmd BufNewFile *.php set ft=php.html
+
+" For all text files set 'textwidth' to 78 characters.
+autocmd FileType text setlocal textwidth=78
+
+autocmd FileType python set omnifunc=pythoncomplete#Complete
+autocmd FileType javascript set omnifunc=javascriptcomplete#CompleteJS
+autocmd FileType html set omnifunc=htmlcomplete#CompleteTags
+autocmd FileType css set omnifunc=csscomplete#CompleteCSS
+autocmd FileType xml set omnifunc=xmlcomplete#CompleteTags
+
+autocmd FileType php set omnifunc=phpcomplete#CompletePHP
+let php_sql_query=1                                                                                        
+let php_htmlInStrings=1
+
+autocmd FileType c set omnifunc=ccomplete#Complete
+
+autocmd FileType ruby set omnifunc=rubycomplete#Complete
+autocmd FileType ruby,eruby let g:rubycomplete_buffer_loading = 1
+autocmd FileType ruby,eruby let g:rubycomplete_rails = 1
+autocmd FileType ruby,eruby let g:rubycomplete_classes_in_global = 1
+
+" remember last cursor position
+autocmd BufReadPost *
+  \ if line("'\"") > 0 && line("'\"") <= line("$") |
+  \   exe "normal g`\"" |
+  \ endif

@@ -1,0 +1,30 @@
+[submodule "vim/vim/bundle/vim-autoclose"]
+	path = vim/vim/bundle/vim-autoclose
+	url = http://github.com/Townk/vim-autoclose.git
+[submodule "vim/vim/bundle/vim-rails"]
+	path = vim/vim/bundle/vim-rails
+	url = http://github.com/tpope/vim-rails.git
+[submodule "vim/vim/bundle/vim-ruby"]
+	path = vim/vim/bundle/vim-ruby
+	url = http://github.com/vim-ruby/vim-ruby.git
+[submodule "vim/vim/bundle/snipmate.vim"]
+	path = vim/vim/bundle/snipmate.vim
+	url = http://github.com/msanders/snipmate.vim.git
+[submodule "vim/vim/bundle/vim-haml"]
+	path = vim/vim/bundle/vim-haml
+	url = http://github.com/tpope/vim-haml.git
+[submodule "vim/vim/bundle/vim-makegreen"]
+	path = vim/vim/bundle/vim-makegreen
+	url = http://github.com/reinh/vim-makegreen.git
+[submodule "vim/vim/bundle/vim-ragtag"]
+	path = vim/vim/bundle/vim-ragtag
+	url = http://github.com/tpope/vim-ragtag.git
+[submodule "vim/vim/bundle/vim-surround"]
+	path = vim/vim/bundle/vim-surround
+	url = http://github.com/tpope/vim-surround.git
+[submodule "vim/vim/bundle/vim-rooter"]
+	path = vim/vim/bundle/vim-rooter
+	url = http://github.com/airblade/vim-rooter.git
+[submodule "vim/vim/bundle/nerdcommenter"]
+	path = vim/vim/bundle/nerdcommenter
+	url = http://github.com/scrooloose/nerdcommenter.git
