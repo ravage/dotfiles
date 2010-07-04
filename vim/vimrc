@@ -1,7 +1,6 @@
 filetype off
 call pathogen#runtime_append_all_bundles()
 call pathogen#helptags()
-
 " disable vi compatible mode
 set nocompatible
 
@@ -102,10 +101,10 @@ set tags=$HOME/.vim/tags
 runtime macros/matchit.vim
 
 " status line
-set statusline=[%n]\ %F%m%r%h%w%=\ [format=%{&ff}]\ [encoding=%{&fenc}]\ [type=%y]\ [ascii=\%03.3b]\ [hex=\%02.2b]\ [pos=%04l,%04v][%p%%]\ [len=%l]
+set statusline=[%n]\ %f%m%r%h%w%=\ [format=%{&ff}]\ [encoding=%{&fenc}]\ [type=%y]\ [ascii=\%03.3b]\ [hex=\%02.2b]\ [pos=%04l,%04v][%p%%]\ [len=%l]
 
 " or use vividchalk
-colorscheme sunburst
+colorscheme fragmentized 
 
 " change default shortcut key \ to ,
 let mapleader=","
@@ -138,9 +137,10 @@ let php_htmlInStrings=1
 autocmd FileType c set omnifunc=ccomplete#Complete
 
 autocmd FileType ruby set omnifunc=rubycomplete#Complete
-autocmd FileType ruby,eruby let g:rubycomplete_buffer_loading = 1
-autocmd FileType ruby,eruby let g:rubycomplete_rails = 1
-autocmd FileType ruby,eruby let g:rubycomplete_classes_in_global = 1
+autocmd FileType ruby set foldmethod=syntax
+let rubycomplete_buffer_loading=1
+let rubycomplete_rails=1
+let rubycomplete_classes_in_global=1
 
 " remember last cursor position
 autocmd BufReadPost *
