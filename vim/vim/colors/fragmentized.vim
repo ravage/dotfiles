@@ -51,7 +51,7 @@ hi Search         guibg=#d7ff00
 hi SpecialChar		guifg=#870000  
 hi SpecialComment	guifg=#870000  
 hi Special			  guifg=#d7d787  
-hi SpecialKey		  guifg=#870000  
+hi SpecialKey		  guifg=#00ff00  
 hi Statement		  guifg=#87afff  
 hi StatusLine		  guifg=#87875f guibg=#000000
 hi StatusLineNC		guifg=#444444 guibg=#000000
@@ -155,7 +155,7 @@ hi Search           ctermbg=190
 hi SpecialChar      ctermfg=88  
 hi SpecialComment	  ctermfg=88  
 hi Special			    ctermfg=186  
-hi SpecialKey		    ctermfg=16  
+hi SpecialKey		    ctermfg=46
 hi Statement		    ctermfg=117
 hi StatusLine		    ctermfg=101 ctermbg=16
 hi StatusLineNC   	ctermfg=101 ctermbg=16

@@ -104,6 +104,7 @@ runtime macros/matchit.vim
 set statusline=[%n]\ %f%m%r%h%w%=\ [format=%{&ff}]\ [encoding=%{&fenc}]\ [type=%y]\ [ascii=\%03.3b]\ [hex=\%02.2b]\ [pos=%04l,%04v][%p%%]\ [len=%l]
 
 " or use vividchalk
+let g:zenburn_high_Contrast=1
 colorscheme fragmentized 
 
 " change default shortcut key \ to ,
