@@ -132,8 +132,8 @@ autocmd FileType xml set omnifunc=xmlcomplete#CompleteTags
 
 autocmd FileType php set omnifunc=phpcomplete#CompletePHP
 let php_sql_query=1                                                                                        
-let php_htmlInStrings=1
-
+let php_html_in_strings=1
+let php_folding=1
 autocmd FileType c set omnifunc=ccomplete#Complete
 
 autocmd FileType ruby set omnifunc=rubycomplete#Complete

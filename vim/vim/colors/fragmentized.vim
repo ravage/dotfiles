@@ -3,7 +3,6 @@
 " License:Public Domain
 
 " This is a dark background color scheme based on TextMate Sunburst theme. 
-" It's suitable for GUI and Console.
 
 set background=dark
 hi clear
@@ -56,11 +55,11 @@ hi SpecialKey		  guifg=#870000
 hi Statement		  guifg=#87afff  
 hi StatusLine		  guifg=#87875f guibg=#000000
 hi StatusLineNC		guifg=#444444 guibg=#000000
-hi StorageClass		guifg=#870000  
+hi StorageClass		guifg=#afd75f  
 hi String			    guifg=#87af87   
 hi Structure	  	guifg=#870000  
 hi Tag				    guifg=#870000  
-hi Title			    guifg=#870000  
+hi Title			    guifg=#dadada  
 hi Todo				    guifg=#000000 guibg=#ffd700 
 hi Typedef		  	guifg=#870000  
 hi Type				    guifg=#afd75f   
@@ -72,14 +71,20 @@ hi WarningMsg	  	guifg=#870000
 hi WildMenu		  	guibg=#00005f  
 
 " Ruby
+hi rubyFunction		guifg=#87afff
 hi link erubyRailsHelperMethod Special
 hi link erubyRailsRenderMethod Special
 hi link railsMethod Normal
-hi rubyFunction		guifg=#87afff
 hi link rubyControl Conditional
 hi link rubyStringDelimiter rubyString
 hi link rubyInterpolation Delimiter
 
+" HTML
+hi link htmlTag rubyFunction
+hi link htmlEndTag htmlTag
+hi link htmlArg Identifier
+
+" HAML
 hi link hamlTag			rubyFunction
 hi link hamlId			rubyFunction
 hi link hamlIdChar		rubyFunction
@@ -88,6 +93,16 @@ hi link hamlClass		rubyFunction
 
 " JavaScript
 hi link javaScriptFuncName rubyFunction
+
+" PHP
+hi link phpFCKeyword Function
+hi link phpSCKeyword Funcion
+hi link phpIdentifier Number
+hi link phpIdentifierSimply phpIdentifier
+hi link phpVarSelector phpIdentifier 
+hi link phpMemberSelector Operator
+hi link phpParent Normal
+hi link phpStatement Define
 
 " Spell
 "hi SpellLocal 		guifg=14  guibg=237
