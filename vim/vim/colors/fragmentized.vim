@@ -17,7 +17,7 @@ hi Comment			  guifg=#5f5f5f
 hi Conditional		guifg=#d78700
 hi Constant			  guifg=#005fff
 hi Cursor			    guibg=#875f00
-hi CursorLine		  guifg=#875f00
+hi CursorLine		  guifg=#875f00 guibg=#121212
 hi Debug			    guifg=#870000
 hi Define			    guifg=#d78700
 hi Delimiter		  guifg=#d7d787   
@@ -34,7 +34,7 @@ hi Folded         guifg=#00ffff guibg=#00005f
 hi Function       guifg=#afd75f   
 hi Identifier     guifg=#d7af5f   
 hi IncSearch      guifg=#d7ff00 guibg=#000000
-hi Keyword        guifg=#d78700  
+hi Keyword        guifg=#d78700
 hi Label          guifg=#87af87
 hi LineNr         guifg=#87875f guibg=#1c1c1c
 hi Macro          guifg=#870000  
@@ -121,7 +121,7 @@ hi Comment			    ctermfg=59
 hi Conditional  		ctermfg=209
 hi Constant			    ctermfg=27
 hi Cursor			      ctermbg=94
-hi CursorLine       ctermfg=94
+hi CursorLine       ctermfg=94 ctermbg=233 cterm=NONE
 hi Debug            ctermfg=88
 hi Define           ctermfg=209
 hi Delimiter        ctermfg=186   
@@ -137,7 +137,7 @@ hi FoldColumn       ctermfg=51 ctermbg=17
 hi Folded           ctermfg=51 ctermbg=17
 hi Function         ctermfg=149   
 hi Identifier       ctermfg=179   
-hi IncSearch        ctermbg=190
+hi IncSearch        ctermfg=190 ctermbg=16
 hi Keyword          ctermfg=209  
 hi Label            ctermfg=108
 hi LineNr           ctermfg=101 ctermbg=234
@@ -151,14 +151,14 @@ hi PreCondit        ctermfg=88
 hi PreProc          ctermfg=209  
 hi Question         ctermfg=88  
 hi Repeat           ctermfg=170
-hi Search           ctermbg=190  
+hi Search           ctermfg=16 ctermbg=190  
 hi SpecialChar      ctermfg=88  
 hi SpecialComment	  ctermfg=88  
 hi Special			    ctermfg=186  
 hi SpecialKey		    ctermfg=46
 hi Statement		    ctermfg=117
 hi StatusLine		    ctermfg=101 ctermbg=16
-hi StatusLineNC   	ctermfg=101 ctermbg=16
+hi StatusLineNC   	ctermfg=239 ctermbg=16
 hi StorageClass 		ctermfg=88
 hi String			      ctermfg=108   
 hi Structure		    ctermfg=88  

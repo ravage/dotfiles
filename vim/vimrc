@@ -103,8 +103,7 @@ runtime macros/matchit.vim
 " status line
 set statusline=[%n]\ %f%m%r%h%w%=\ [format=%{&ff}]\ [encoding=%{&fenc}]\ [type=%y]\ [ascii=\%03.3b]\ [hex=\%02.2b]\ [pos=%04l,%04v][%p%%]\ [len=%l]
 
-" or use vividchalk
-let g:zenburn_high_Contrast=1
+" set colorscheme
 colorscheme fragmentized 
 
 " change default shortcut key \ to ,
@@ -127,6 +126,7 @@ autocmd FileType text setlocal textwidth=78
 
 autocmd FileType python set omnifunc=pythoncomplete#Complete
 autocmd FileType javascript set omnifunc=javascriptcomplete#CompleteJS
+"autocmd FileType javascript compiler jsl
 autocmd FileType html set omnifunc=htmlcomplete#CompleteTags
 autocmd FileType css set omnifunc=csscomplete#CompleteCSS
 autocmd FileType xml set omnifunc=xmlcomplete#CompleteTags
@@ -143,6 +143,27 @@ let rubycomplete_buffer_loading=1
 let rubycomplete_rails=1
 let rubycomplete_classes_in_global=1
 
+" Latex
+
+" IMPORTANT: grep will sometimes skip displaying the file name if you
+" search in a singe file. This will confuse Latex-Suite. Set your grep
+" program to always generate a file-name.
+set grepprg=grep\ -nH\ $*
+
+" OPTIONAL: Starting with Vim 7, the filetype of empty .tex files defaults to
+" 'plaintex' instead of 'tex', which results in vim-latex not being loaded.
+" The following changes the default filetype back to 'tex':
+let g:tex_flavor='latex'
+
+" Fix for openning Preview in OSX
+let g:Tex_TreatMacViewerAsUNIX = 1
+let g:Tex_ViewRule_pdf = 'open -a Preview'
+
+" Fix for allowing e-accute
+imap <buffer> <leader>i <Plug>Tex_InsertItemOnThisLine
+
+" Override Text F9
+imap <buffer> <M-TAB> <Plug>Tex_Completion
 " remember last cursor position
 autocmd BufReadPost *
   \ if line("'\"") > 0 && line("'\"") <= line("$") |
