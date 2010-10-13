@@ -6,12 +6,7 @@ shelltitle "$ |bash"
 defutf8 on
 defscrollback 3000
 
-attrcolor b ".I"
 termcapinfo xterm* ti@:te@+
-defbce "on"
-
-# BIND ESCAPE TO F11!
-# bindkey -k F1 command
 
 hardstatus alwayslastline
 hardstatus string "%{= kb}[ %{w}${USER}@%H %{b}][%= %{= kw}%?%-Lw%?%{g}(%{w}%n*%f%t%?(%u)%?%{g})%{w}%?%+Lw%?%?%= %{b}][%{w} %d/%m %{w}%c %{b}]"

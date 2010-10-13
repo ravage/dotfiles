@@ -1,0 +1,9 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhist_cnt =7
+let g:netrw_dirhist_1='/Users/ravage/Arquivo/Clientes/CELCC/cultural_routes'
+let g:netrw_dirhist_2='/Users/ravage/Sites/localhost.dev/www/lce/ajax'
+let g:netrw_dirhist_3='/Users/ravage/Arquivo/Clientes/CELCC/cultural_routes/app/controllers/admin'
+let g:netrw_dirhist_4='/Users/ravage/Arquivo/Clientes/CELCC/cultural_routes/app/controllers'
+let g:netrw_dirhist_5='/Users/ravage/Arquivo/Clientes/CELCC/cultural_routes/app/views/contact_mailer'
+let g:netrw_dirhist_6='/Users/ravage/Arquivo/Clientes/CELCC/cultural_routes/app/views/contacts'
+let g:netrw_dirhist_7='/Users/ravage/Arquivo/Clientes/CELCC/cultural_routes/app/helpers'

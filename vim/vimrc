@@ -90,6 +90,8 @@ set tabstop=2
 " number of spaces for indentation
 set shiftwidth=2
 
+set softtabstop=2
+
 " use spaces instead of tabs
 set expandtab
 
@@ -113,16 +115,16 @@ colorscheme fragmentized
 " change default shortcut key \ to ,
 let mapleader=","
 
-" TagList config {{{1
-let generate_tags = 1 
+" TagList config
+let generate_tags = 1
 let Tlist_Compact_Format = 1
 let Tlist_Exit_OnlyWindow = 1
 let Tlist_GainFocus_On_ToggleOpen = 1
 let Tlist_File_Fold_Auto_Close = 1
 let Tlist_Sort_Type = 'name'
-" 1}}}
+" 1
 
-" Mappings {{{1
+" Mappings
 " move lines http://vim.wikia.com/wiki/Moving_lines_up_or_down
 nnoremap <C-j> :m+<CR>==
 nnoremap <C-k> :m-2<CR>==
@@ -134,7 +136,7 @@ vnoremap <C-k> :m-2<CR>gv=gv
 " Shortcut to view/hide hidden characters
 map <Leader>sc :set list!<CR>
 nmap <Leader>$ :call Preserve("%s/\\s\\+$//e")<CR>
-" 1}}}
+" 1
 
 " For all text files set 'textwidth' to 78 characters.
 autocmd FileType text setlocal textwidth=78
@@ -143,9 +145,9 @@ autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
 autocmd FileType html setlocal omnifunc=htmlcomplete#CompleteTags
 autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS
 autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
-autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
+autocmd FileType javascript.rals setlocal omnifunc=javascriptcomplete#CompleteJS
 
-" PHP Preferences {{{1
+" PHP Preferences
 autocmd FileType php setlocal omnifunc=phpcomplete#CompletePHP
 autocmd FileType php let php_sql_query=1
 autocmd FileType php let php_html_in_strings=1
@@ -154,39 +156,25 @@ autocmd FileType php let php_folding=1
 " set php and html for php files
 autocmd BufRead *.php setlocal ft=php.html
 autocmd BufNewFile *.php setlocal ft=php.html
-" 1}}}
+" 1
 
 
-" Ruby Preferences {{{1
-autocmd FileType ruby setlocal omnifunc=rubycomplete#Complete
-autocmd FileType ruby setlocal foldmethod=syntax
+" Ruby Preferences
+autocmd FileType ruby setlocal omnifunc=rubycomplete#Complete foldmethod=syntax
 autocmd FileType ruby let rubycomplete_buffer_loading=1
 autocmd FileType ruby let rubycomplete_rails=1
 autocmd FileType ruby let rubycomplete_classes_in_global=1
-" 1}}}
+" 1
 
-" Latex Preferences {{{1
-
-" IMPORTANT: grep will sometimes skip displaying the file name if you
-" search in a singe file. This will confuse Latex-Suite. Set your grep
-" program to always generate a file-name.
-autocmd FileType tex setlocal grepprg=grep\ -nH\ $*
+" Latex Preferences
+let g:LatexBox_latexmk_options = '-pvc'
 
 " OPTIONAL: Starting with Vim 7, the filetype of empty .tex files defaults to
 " 'plaintex' instead of 'tex', which results in vim-latex not being loaded.
 " The following changes the default filetype back to 'tex':
 let g:tex_flavor='latex'
 
-" Fix for openning Preview in OSX
-autocmd FileType tex let g:Tex_TreatMacViewerAsUNIX = 1
-autocmd FileType tex let g:Tex_ViewRule_pdf = 'open -a Preview'
-
-" Fix for allowing e-accute
-autocmd Filetype tex imap <buffer> <leader>i <Plug>Tex_InsertItemOnThisLine
-
-" Override Text F9
-autocmd FileType tex imap <buffer> <M-TAB> <Plug>Tex_Completion
-"1}}}
+"1
 
 " remember last cursor position
 autocmd BufReadPost *

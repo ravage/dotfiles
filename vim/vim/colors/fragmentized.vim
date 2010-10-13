@@ -44,7 +44,7 @@ hi NonText        guifg=#5f5f5f
 hi Normal         guifg=#dadada guibg=#000000
 hi Number         guifg=#005fff
 hi Operator       guifg=#ff875f
-hi PreCondit      guifg=#870000
+hi PreCondit      guifg=#d7d787
 hi PreProc        guifg=#ff875f
 hi Question       guifg=#870000
 hi Repeat         guifg=#d78700
@@ -151,7 +151,7 @@ hi Normal           ctermfg=253 ctermbg=16
 hi Number           ctermfg=27
 hi Operator         ctermfg=209
 hi PreCondit        ctermfg=88
-hi PreProc          ctermfg=209
+hi PreProc          ctermfg=186
 hi Question         ctermfg=88
 hi Repeat           ctermfg=170
 hi Search           ctermfg=16 ctermbg=190
