@@ -1,5 +1,5 @@
 " editor font
-set guifont=Inconsolata:h14
+set guifont=Menlo:h12
 
 " try to smooth font
 set antialias

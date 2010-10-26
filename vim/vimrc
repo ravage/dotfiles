@@ -3,7 +3,7 @@ set nocompatible
 
 filetype off
 call pathogen#runtime_append_all_bundles()
-"call pathogen#helptags()
+call pathogen#helptags()
 
 setlocal foldmethod=marker
 
@@ -110,7 +110,9 @@ runtime macros/matchit.vim
 set statusline=[%n]\ %f%m%r%h%w%=\ [format=%{&ff}]\ [encoding=%{&fenc}]\ [type=%y]\ [ascii=\%03.3b]\ [hex=\%02.2b]\ [pos=%04l,%04v][%p%%]\ [len=%l]
 
 " set colorscheme
-colorscheme fragmentized
+"colorscheme fragmentized
+let g:zenburn_high_Contrast = 1
+colorscheme zenburn
 
 " change default shortcut key \ to ,
 let mapleader=","
@@ -125,13 +127,6 @@ let Tlist_Sort_Type = 'name'
 " 1
 
 " Mappings
-" move lines http://vim.wikia.com/wiki/Moving_lines_up_or_down
-nnoremap <C-j> :m+<CR>==
-nnoremap <C-k> :m-2<CR>==
-inoremap <C-j> <Esc>:m+<CR>==gi
-inoremap <C-k> <Esc>:m-2<CR>==gi
-vnoremap <C-j> :m'>+<CR>gv=gv
-vnoremap <C-k> :m-2<CR>gv=gv
 
 " Shortcut to view/hide hidden characters
 map <Leader>sc :set list!<CR>
@@ -194,3 +189,12 @@ function! Preserve(command)
   let @/=_s
   call cursor(l, c)
 endfunction
+
+" Show syntax highlighting groups for word under cursor
+nmap <C-S-P> :call <SID>SynStack()<CR>
+function! <SID>SynStack()
+  if !exists("*synstack")
+    return
+  endif
+  echo map(synstack(line('.'), col('.')), 'synIDattr(v:val, "name")')
+endfunc
