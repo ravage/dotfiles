@@ -112,7 +112,7 @@ set statusline=[%n]\ %f%m%r%h%w%=\ [format=%{&ff}]\ [encoding=%{&fenc}]\ [type=%
 " set colorscheme
 "colorscheme fragmentized
 let g:zenburn_high_Contrast = 1
-colorscheme zenburn
+colorscheme zenburn 
 
 " change default shortcut key \ to ,
 let mapleader=","
@@ -124,6 +124,8 @@ let Tlist_Exit_OnlyWindow = 1
 let Tlist_GainFocus_On_ToggleOpen = 1
 let Tlist_File_Fold_Auto_Close = 1
 let Tlist_Sort_Type = 'name'
+let tlist_tex_settings   = 'latex;s:sections;g:graphics;l:labels'
+set iskeyword=@,48-57,_,-,:,192-255
 " 1
 
 " Mappings

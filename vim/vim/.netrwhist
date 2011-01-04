@@ -1,10 +1,5 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =8
-let g:netrw_dirhist_1='/Users/ravage/Arquivo/Clientes/CELCC/cultural_routes'
-let g:netrw_dirhist_2='/Users/ravage/Sites/localhost.dev/www/lce/ajax'
-let g:netrw_dirhist_3='/Users/ravage/Arquivo/Clientes/CELCC/cultural_routes/app/controllers/admin'
-let g:netrw_dirhist_4='/Users/ravage/Arquivo/Clientes/CELCC/cultural_routes/app/controllers'
-let g:netrw_dirhist_5='/Users/ravage/Arquivo/Clientes/CELCC/cultural_routes/app/views/contact_mailer'
-let g:netrw_dirhist_6='/Users/ravage/Arquivo/Clientes/CELCC/cultural_routes/app/views/contacts'
-let g:netrw_dirhist_7='/Users/ravage/Arquivo/Clientes/CELCC/cultural_routes/app/helpers'
-let g:netrw_dirhist_8='/Users/ravage/Downloads/Vim-toCterm/lib'
+let g:netrw_dirhist_cnt =3
+let g:netrw_dirhist_1='/Users/ravage/Arquivo/Escola/UMinho/ERS/Projecto Integrado'
+let g:netrw_dirhist_2='/Users/ravage/Arquivo/Escola/UMinho/ERS/Projecto Integrado/Proposta Arquitectura'
+let g:netrw_dirhist_3='/Users/ravage/Arquivo/Stuff/Scripts/gitolite-admin/conf'
