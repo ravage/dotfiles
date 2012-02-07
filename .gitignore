@@ -1,3 +1,4 @@
 tags
 tmp
 vim/vim/bundle/*
+!vim/vim/bundle/vundle
