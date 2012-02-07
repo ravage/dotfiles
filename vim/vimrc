@@ -2,13 +2,43 @@
 set nocompatible
 
 filetype off
-call pathogen#runtime_append_all_bundles()
-call pathogen#helptags()
+" call pathogen#runtime_append_all_bundles()
+" call pathogen#helptags()
+set rtp+=~/.vim/bundle/vundle/
+call vundle#rc()
+
+Bundle 'gmarik/vundle'
+
+Bundle 'altercation/vim-colors-solarized'
+Bundle 'tpope/vim-rails'
+Bundle 'tpope/vim-fugitive'
+Bundle 'tpope/vim-surround'
+Bundle 'tpope/vim-haml'
+Bundle 'vim-ruby/vim-ruby'
+Bundle 'Ruby-Snippets'
+Bundle 'paulyg/Vim-PHP-Stuff'
+" Bundle 'airblade/vim-rooter'
+Bundle 'tomtom/tcomment_vim'
+Bundle 'pangloss/vim-javascript'
+Bundle 'thisivan/vim-bufexplorer'
+"Bundle 'joestelmach/javaScriptLint.vim'
+Bundle 'scrooloose/syntastic'
+Bundle 'majutsushi/tagbar'
+Bundle 'vim-scripts/LaTeX-Box'
+Bundle 'msanders/snipmate.vim'
+Bundle 'vim-peepopen'
+Bundle 'groenewege/vim-less'
+Bundle 'skammer/vim-css-color'
+Bundle 'hail2u/vim-css3-syntax'
+Bundle 'AutoTag'
+" Bundle 'git://github.com/topfunky/PeepOpen-EditorSupport.git/vim-peepopen'
 
 setlocal foldmethod=marker
 
 " encoding to utf-8
 set encoding=utf-8
+
+set background=dark
 
 " enable 256 colors
 set t_Co=256
@@ -111,8 +141,8 @@ set statusline=[%n]\ %f%m%r%h%w%=\ [format=%{&ff}]\ [encoding=%{&fenc}]\ [type=%
 
 " set colorscheme
 "colorscheme fragmentized
-let g:zenburn_high_Contrast = 1
-colorscheme zenburn 
+"let g:zenburn_high_Contrast = 1
+colorscheme solarized
 
 " change default shortcut key \ to ,
 let mapleader=","
@@ -130,11 +160,26 @@ set iskeyword=@,48-57,_,-,:,192-255
 
 " Mappings
 
-" Shortcut to view/hide hidden characters
+" view/hide hidden characters
 map <Leader>sc :set list!<CR>
-nmap <Leader>$ :call Preserve("%s/\\s\\+$//e")<CR>
-" 1
 
+" remove trailing spaces
+nmap <Leader>$ :call Preserve("%s/\\s\\+$//e")<CR>
+
+" comment single line
+map <Leader>cc <c-_><c-_>
+
+" comment block
+map <Leader>cb <c-_>b
+
+" macvim switch cycle tab
+noremap <c-tab> :tabnext<cr>
+
+" tagbar toggle
+map <Leader>tb :TagbarToggle<CR>
+
+noremap <F3> <c-]>
+noremap <F4> g<c-]>
 " For all text files set 'textwidth' to 78 characters.
 autocmd FileType text setlocal textwidth=78
 autocmd FileType c setlocal omnifunc=ccomplete#Complete
@@ -150,6 +195,8 @@ autocmd FileType php let php_sql_query=1
 autocmd FileType php let php_html_in_strings=1
 autocmd FileType php let php_folding=1
 
+"autocmd FileType javascript setlocal shiftwidth=4 tabstop=4
+
 " set php and html for php files
 autocmd BufRead *.php setlocal ft=php.html
 autocmd BufNewFile *.php setlocal ft=php.html
@@ -161,6 +208,17 @@ autocmd FileType ruby setlocal omnifunc=rubycomplete#Complete foldmethod=syntax
 autocmd FileType ruby let rubycomplete_buffer_loading=1
 autocmd FileType ruby let rubycomplete_rails=1
 autocmd FileType ruby let rubycomplete_classes_in_global=1
+let g:rubycomplete_buffer_loading = 1
+let g:rubycomplete_classes_in_global = 1
+let g:rubycomplete_rails = 1
+" 1
+
+" CSS Preferences
+au BufRead,BufNewFile *.scss set filetype=css.scss
+" 1
+
+" JavaScript Preferences
+let g:syntastic_javascript_checker = "jshint"
 " 1
 
 " Latex Preferences
@@ -171,7 +229,11 @@ let g:LatexBox_latexmk_options = '-pvc'
 " The following changes the default filetype back to 'tex':
 let g:tex_flavor='latex'
 
-"1
+" 1
+
+" Syntastic options
+let g:syntastic_auto_loc_list=1
+" 1
 
 " remember last cursor position
 autocmd BufReadPost *
@@ -200,3 +262,4 @@ function! <SID>SynStack()
   endif
   echo map(synstack(line('.'), col('.')), 'synIDattr(v:val, "name")')
 endfunc
+
