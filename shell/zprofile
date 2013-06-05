@@ -1,0 +1,23 @@
+export LC_ALL=pt_PT.UTF-8
+export LANG=en_US.UTF-8
+export LC_MESSAGES=en_US.UTF-8
+
+alias apache_start="sudo launchctl load -w /System/Library/LaunchDaemons/org.apache.httpd.plist"
+alias apache_stop="sudo launchctl unload -w /System/Library/LaunchDaemons/org.apache.httpd.plist"
+
+alias pow_start=pow_start
+alias pow_stop=pow_stop
+
+alias contextcleanup="/System/Library/Frameworks/CoreServices.framework/Frameworks/LaunchServices.framework/Support/lsregister -kill -r -domain local -domain system -domain user"
+
+alias nw="/Users/ravage/SDK/node-webkit/node-webkit.app/Contents/MacOS/node-webkit"
+
+function pow_start() {
+  sudo launchctl load -w /Library/LaunchDaemons/cx.pow.firewall.plist
+  launchctl load -w ~/Library/LaunchAgents/cx.pow.powd.plist
+}
+
+function pow_stop() {
+  sudo launchctl unload -w /Library/LaunchDaemons/cx.pow.firewall.plist
+  launchctl unload -w ~/Library/LaunchAgents/cx.pow.powd.plist
+}

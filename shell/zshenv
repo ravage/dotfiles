@@ -1,0 +1,33 @@
+SENCHA_SDK=/Users/ravage/SDK/SenchaTouch
+ANDROID_TOOLS=/Users/ravage/SDK/Android/tools
+ANDROID_PLATFORM_TOOLS=/Users/ravage/SDK/Android/platform-tools
+
+PATH=/usr/local/bin:/usr/local/sbin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin
+PATH=$PATH:$SENCHA_SDK:$ANDROID_TOOLS:$ANDROID_PLATFORM_TOOLS
+PATH=$PATH:/usr/local/texlive/2012/bin/x86_64-darwin
+PATH=$PATH:/usr/local/share/npm/bin
+PATH=$PATH:/usr/local/go/bin
+PATH=$PATH:$HOME/SDK/vertx/bin
+PATH=$PATH:~/.bin
+export PATH
+
+export NODE_PATH=/usr/local/lib/node_modules
+export SENCHA_SDK_TOOLS_2_0_0_BETA3=$SENCHA_SDK
+
+if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
+
+
+export LANGUAGE="en_US.UTF-8"
+export LANG="en_US.UTF-8"
+export LC_MESSAGES="en_US.UTF-8"
+export LC_CTYPE="pt_PT.UTF-8"
+export LC_NUMERIC="pt_PT.UTF-8"
+export LC_TIME="pt_PT.UTF-8"
+export LC_COLLATE="pt_PT.UTF-8"
+export LC_MONETARY="pt_PT.UTF-8"
+export LC_PAPER="pt_PT.UTF-8"
+export LC_NAME="pt_PT.UTF-8"
+export LC_ADDRESS="pt_PT.UTF-8"
+export LC_TELEPHONE="pt_PT.UTF-8"
+export LC_MEASUREMENT="pt_PT.UTF-8"
+export LC_IDENTIFICATION="pt_PT.UTF-8"

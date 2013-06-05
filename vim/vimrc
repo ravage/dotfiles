@@ -10,6 +10,7 @@ call vundle#rc()
 Bundle 'gmarik/vundle'
 
 Bundle 'altercation/vim-colors-solarized'
+Bundle 'chriskempson/base16-vim'
 Bundle 'tpope/vim-rails'
 Bundle 'tpope/vim-fugitive'
 Bundle 'tpope/vim-surround'
@@ -20,18 +21,23 @@ Bundle 'paulyg/Vim-PHP-Stuff'
 " Bundle 'airblade/vim-rooter'
 Bundle 'tomtom/tcomment_vim'
 Bundle 'pangloss/vim-javascript'
-Bundle 'thisivan/vim-bufexplorer'
-"Bundle 'joestelmach/javaScriptLint.vim'
+" Bundle 'thisivan/vim-bufexplorer'
+" Bundle 'joestelmach/javaScriptLint.vim'
 Bundle 'scrooloose/syntastic'
-Bundle 'majutsushi/tagbar'
+" Bundle 'majutsushi/tagbar'
 Bundle 'vim-scripts/LaTeX-Box'
 Bundle 'msanders/snipmate.vim'
-Bundle 'vim-peepopen'
-Bundle 'groenewege/vim-less'
+" Bundle 'vim-peepopen'
+" Bundle 'groenewege/vim-less'
 Bundle 'skammer/vim-css-color'
 Bundle 'hail2u/vim-css3-syntax'
-Bundle 'AutoTag'
-" Bundle 'git://github.com/topfunky/PeepOpen-EditorSupport.git/vim-peepopen'
+" Bundle 'AutoTag'
+Bundle 'kchmck/vim-coffee-script'
+Bundle 'mattn/zencoding-vim'
+Bundle 'jnwhiteh/vim-golang'
+Bundle 'mileszs/ack.vim'
+Bundle 'tpope/vim-eunuch'
+Bundle 'git://github.com/topfunky/PeepOpen-EditorSupport.git/vim-peepopen'
 
 setlocal foldmethod=marker
 
@@ -44,7 +50,7 @@ set background=dark
 set t_Co=256
 
 " keep 100 last commands
-set history=100
+set history=1000
 
 " enable mouse in all modes
 set mouse=a
@@ -54,9 +60,11 @@ set autoindent
 set smartindent
 
 " enable syntax highlighting
-syntax enable
+syntax on
 
 " enable file type detection.
+filetype on
+filetype indent on
 filetype plugin indent on
 
 " show partial commands
@@ -75,7 +83,7 @@ set hidden
 set wildmenu
 
 " show complete list of possible matches
-set wildmode=list:longest
+set wildmode=longest,list
 
 " ignore case while searching
 set ignorecase
@@ -115,12 +123,12 @@ set nowritebackup
 set directory=$HOME/.vim/tmp/
 
 " global tab width
-set tabstop=2
+set tabstop=4
 
 " number of spaces for indentation
-set shiftwidth=2
+set shiftwidth=4
 
-set softtabstop=2
+set softtabstop=4
 
 " use spaces instead of tabs
 set expandtab
@@ -128,35 +136,55 @@ set expandtab
 " always show status line
 set laststatus=2
 
+set fileformat=unix
+
 " chars to be listed, tabs and whitspaces
 set listchars=tab:▸\ ,trail:.,eol:¬
 "set listchars=tab:▸\ ,trail:·,eol:
 
 set tags=tags
 
+" show matching bracket
+set showmatch
+
+" underline match
+set cursorline
+
+" line numbers min spacing
+set numberwidth=5
+
+" always show tabline
+set showtabline=2
+
 runtime macros/matchit.vim
 
 " status line
-set statusline=[%n]\ %f%m%r%h%w%=\ [format=%{&ff}]\ [encoding=%{&fenc}]\ [type=%y]\ [ascii=\%03.3b]\ [hex=\%02.2b]\ [pos=%04l,%04v][%p%%]\ [len=%l]
+" set statusline=[%n]\ %t%m%r%h%w%=\ [format=%{&ff}]\ [encoding=%{&fenc}]\ [type=%y]\ [ascii=\%03.3b]\ [hex=\%02.2b]\ [pos=%04l,%04v][%p%%]\ [len=%l]
+set statusline=%f%m%r%h%w
+set statusline+=%=%((%{strlen(&fenc)?&fenc:'enc?'}%)/
+set statusline+=%{&ff}/
+set statusline+=%Y)
+set statusline+=\ %=%-6((%03l,%03c)%)
 
-" set colorscheme
-"colorscheme fragmentized
-"let g:zenburn_high_Contrast = 1
-colorscheme solarized
+
+set winwidth=80
+
+" http://www.shallowsky.com/linux/noaltscreen.html
+set t_ti= t_te=
+
+set t_Co=256
+
+" We have to have a winheight bigger than we want to set winminheight. But if
+" we set winheight to be huge before winminheight, the winminheight set will
+" fail.
+set winheight=5
+set winminheight=5
+set winheight=999
+
+ colorscheme solarized
 
 " change default shortcut key \ to ,
 let mapleader=","
-
-" TagList config
-let generate_tags = 1
-let Tlist_Compact_Format = 1
-let Tlist_Exit_OnlyWindow = 1
-let Tlist_GainFocus_On_ToggleOpen = 1
-let Tlist_File_Fold_Auto_Close = 1
-let Tlist_Sort_Type = 'name'
-let tlist_tex_settings   = 'latex;s:sections;g:graphics;l:labels'
-set iskeyword=@,48-57,_,-,:,192-255
-" 1
 
 " Mappings
 
@@ -180,6 +208,15 @@ map <Leader>tb :TagbarToggle<CR>
 
 noremap <F3> <c-]>
 noremap <F4> g<c-]>
+
+map <D-1> :tabn 1<cr>
+map <D-2> :tabn 2<cr>
+map <D-3> <C-o>:tabn 3<cr>
+map <D-4> <C-o>:tabn 4<cr>
+
+autocmd FileType ruby,haml,eruby,yaml,html,javascript,sass,scss,css set ai sw=2 sts=2 et
+autocmd FileType python set sw=4 sts=4 et
+
 " For all text files set 'textwidth' to 78 characters.
 autocmd FileType text setlocal textwidth=78
 autocmd FileType c setlocal omnifunc=ccomplete#Complete
@@ -232,8 +269,15 @@ let g:tex_flavor='latex'
 " 1
 
 " Syntastic options
+let g:syntastic_mode_map = { 'mode': 'active', 'active_filetypes': [], 'passive_filetypes': ['html'] }
 let g:syntastic_auto_loc_list=1
 " 1
+
+" the_silver_searcher
+let g:ackprg = 'ag --nogroup --nocolor --column'
+"
+
+let g:ruby_path = system('echo $HOME/.rbenv/shims')
 
 " remember last cursor position
 autocmd BufReadPost *
